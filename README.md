@@ -57,14 +57,14 @@ nuon sync                       # syncs this app config
 
 ## Operational runbooks
 
-`runbooks/` holds six **Runbook** archetypes — named, multi-step procedures you run
-on demand against an install, with a rendered README per runbook. They operate on
-this app's real components (`chatbot`, `ollama`, `application_load_balancer`) and
-actions (`deployment_status`, `alb_healthcheck`, `break_glass_remediation`).
+`runbooks/` holds five **Runbook** archetypes — named, multi-step procedures you run
+on demand against an install, with a rendered README per runbook (see
+[`runbooks/README.md`](./runbooks/README.md)). They operate on this app's real
+components (`chatbot`, `ollama`, `application_load_balancer`) and actions
+(`deployment_status`, `alb_healthcheck`, `break_glass_remediation`).
 
 | Runbook | Scenario | Step types it shows |
 |---------|----------|---------------------|
-| `migrate-and-roll-out` | **Migration** — apply a change, roll out, health-check | inline action → `component_deploy` → curl |
 | `onboard-install` | **Setup** — onboard a new install | inline action → `component_deploy` → curl |
 | `full-health-check` | **Health check** — many signals at once | inline + `action_name` references |
 | `debug-bundle` | **Debug** — collect diagnostics | inline (read-only, non-failing) |
