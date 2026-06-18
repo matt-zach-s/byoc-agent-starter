@@ -3,7 +3,7 @@ FROM python:3.12-slim
 WORKDIR /app
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir --target=/opt/deps --ignore-installed -r requirements.txt
+RUN rm -rf /opt/deps && pip install --no-cache-dir --target=/opt/deps --ignore-installed -r requirements.txt
 
 COPY . .
 
